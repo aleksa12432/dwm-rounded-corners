@@ -69,8 +69,6 @@ static const char *screenshot[]     = { "flameshot", "gui", "-p", "/tmp", NULL }
 static const char *cirilica[] = { "setxkbmap", "rs" , NULL};
 static const char *latinica[] = { "setxkbmap", "us" , NULL};
 
-#include "selfrestart.c"
-
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -112,7 +110,6 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{MODKEY,			XK_c,     spawn,	   {.v = cirilica } },
 	{MODKEY,			XK_Cyrillic_tse,     spawn,	   {.v = latinica} },
-	{MODKEY|ShiftMask,              XK_r,     self_restart, {0} },
 };
 
 /* button definitions */
@@ -131,3 +128,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
